@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>編集: <%= data.title %></title>
+</head>
+<body>
+  <h2><%= data.title %> を編集</h2>
+  <form action="/wurts/update/<%= id %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr>
+          <td>曲名</td>
+          <td><input type="text" name="title" value="<%= data.title %>"></td>
+      </tr>
+      <tr>
+          <td>アルバム</td>
+          <td><input type="text" name="album" value="<%= data.album %>"></td>
+      </tr>
+      <tr>
+          <td>リリース年</td>
+          <td><input type="text" name="year" value="<%= data.year %>"></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="更新を保存">
+  </form>
+  <br>
+  <a href="/wurts/<%= id %>">キャンセル</a>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>WurtS 楽曲一覧</title>
+  <style>
+    body {
+        /* WurtS用の画像を指定 */
+        background-image: url("/public/bg_wurts.jpg");
+        
+        /* 画像を画面いっぱいに */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        
+        /* 文字色を白に（背景が暗い場合） */
+        color: white; 
+        
+        /* フォントを少しクールに（ゴシック体） */
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+    
+    /* 表の背景を半透明の黒にして読みやすくする */
+    table {
+        background-color: rgba(0, 0, 0, 0.8); /* 80%透明の黒 */
+        color: white;
+        width: 80%; /* 幅を少し広げる */
+        margin: 20px auto; /* 真ん中に寄せる */
+    }
+    
+    /* リンクの色（WurtSっぽく青緑や黄色などお好みで） */
+    a {
+        color: #00ffcc; /* ネオンっぽい青緑 */
+        text-decoration: none; /* 下線を消す */
+    }
+    
+    /* マウスを乗せたときに光らせる */
+    a:hover {
+        text-shadow: 0 0 10px #00ffcc;
+    }
+
+    h2 {
+        text-align: center; /* タイトルを真ん中に */
+        text-shadow: 2px 2px 4px black;
+    }
+  </style>
+  </head>
+</head>
+<body>
+  <h2>🎸 WurtS 楽曲一覧</h2>
+  <table border="1">
+    <tr><th>ID</th><th>曲名</th><th>アルバム</th><th>詳細</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr>
+          <td><%= row.id %></td>
+          <td><%= row.title %></td>
+          <td><%= row.album %></td>
+          <td><a href="/wurts/<%= number %>">詳細</a></td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <br>
+  <a href="/public/wurts_new.html">➕ 曲を追加する</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.menu %></title>
+</head>
+<body>
+  <h2><%= data.menu %> の詳細</h2>
+  <table border="1">
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>種目</td><td><%= data.menu %></td></tr>
+    <tr><td>重さ</td><td><%= data.weight %></td></tr>
+    <tr><td>回数</td><td><%= data.count %></td></tr>
+  </table>
+  <br>
+  <a href="/muscle/edit/<%= id %>">📝 編集する</a>
+  <br><br>
+  <form action="/muscle/delete/<%= id %>" method="POST">
+      <input type="submit" value="🗑️ 削除する" onclick="return confirm('削除しますか？');">
+  </form>
+  <br>
+  <a href="/muscle">🔙 一覧に戻る</a>
+</body>
+</html>

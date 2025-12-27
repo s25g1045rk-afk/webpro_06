@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の詳細</title>
+</head>
+<body>
+  <h2><%= data.name %> の詳細</h2>
+  <table border="1">
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>チーム名</td><td><%= data.name %></td></tr>
+    <tr><td>カンファレンス</td><td><%= data.conf %></td></tr>
+    <tr><td>本拠地</td><td><%= data.arena %></td></tr>
+    <tr><td>注目選手</td><td><%= data.star %></td></tr>
+  </table>
+  <br>
+  
+  <a href="/nba/edit/<%= id %>">📝 編集する</a>
+  
+  <br><br>
+
+  <form action="/nba/delete/<%= id %>" method="POST">
+      <input type="submit" value="🗑️ 削除する" onclick="return confirm('本当に削除していいですか？');">
+  </form>
+  <br>
+  <a href="/nba">🔙 一覧に戻る</a>
+</body>
+</html>

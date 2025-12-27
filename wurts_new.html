@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>楽曲追加</title>
+</head>
+<body>
+    <h2>WurtSの曲を追加</h2>
+    <form action="/wurts/create" method="POST">
+        <label>曲名: </label><input type="text" name="title" required><br>
+        <label>アルバム: </label><input type="text" name="album"><br>
+        <label>リリース年: </label><input type="text" name="year"><br>
+        <br>
+        <input type="submit" value="登録する">
+    </form>
+    <br>
+    <a href="/wurts">一覧に戻る</a>
+</body>
+</html>

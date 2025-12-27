@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>編集: <%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %> の情報を編集</h2>
+  <form action="/nba/update/<%= id %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr>
+          <td>チーム名</td>
+          <td><input type="text" name="name" value="<%= data.name %>"></td>
+      </tr>
+      <tr>
+          <td>カンファレンス</td>
+          <td><input type="text" name="conf" value="<%= data.conf %>"></td>
+      </tr>
+      <tr>
+          <td>本拠地</td>
+          <td><input type="text" name="arena" value="<%= data.arena %>"></td>
+      </tr>
+      <tr>
+          <td>注目選手</td>
+          <td><input type="text" name="star" value="<%= data.star %>"></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="更新を保存">
+  </form>
+  <br>
+  <a href="/nba/<%= id %>">編集をやめる</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.title %></title>
+</head>
+<body>
+  <h2><%= data.title %> の詳細</h2>
+  <table border="1">
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>曲名</td><td><%= data.title %></td></tr>
+    <tr><td>収録アルバム</td><td><%= data.album %></td></tr>
+    <tr><td>リリース年</td><td><%= data.year %></td></tr>
+  </table>
+  <br>
+  <a href="/wurts/edit/<%= id %>">📝 編集する</a>
+  <br><br>
+  
+  <form action="/wurts/delete/<%= id %>" method="POST">
+      <input type="submit" value="🗑️ 削除する" onclick="return confirm('本当に削除しますか？');">
+  </form>
+  
+  <br>
+  <a href="/wurts">🔙 一覧に戻る</a>
+</body>
+</html>

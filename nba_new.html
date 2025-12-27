@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>NBAチーム追加</title>
+</head>
+<body>
+    <h2>新しいNBAチームを登録</h2>
+    <form action="/nba/create" method="POST">
+        <label>チーム名: </label><input type="text" name="name" required><br>
+        <label>所属 (West/East): </label><input type="text" name="conf"><br>
+        <label>本拠地: </label><input type="text" name="arena"><br>
+        <label>注目選手: </label><input type="text" name="star"><br>
+        <br>
+        <input type="submit" value="登録する">
+    </form>
+    <br>
+    <a href="/nba">キャンセルして一覧に戻る</a>
+</body>
+</html>

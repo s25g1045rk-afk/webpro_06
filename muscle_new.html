@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>筋トレ記録追加</title>
+</head>
+<body>
+    <h2>💪 今日の筋トレを追加</h2>
+    <form action="/muscle/create" method="POST">
+        <label>種目: </label><input type="text" name="menu" required><br>
+        <label>重さ: </label><input type="text" name="weight"><br>
+        <label>回数: </label><input type="text" name="count"><br>
+        <br>
+        <input type="submit" value="記録する">
+    </form>
+    <br>
+    <a href="/muscle">一覧に戻る</a>
+</body>
+</html>

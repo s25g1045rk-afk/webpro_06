@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>NBAチーム一覧</title>
+
+<head>
+  <meta charset="utf-8">
+  <title>NBAチーム一覧</title>
+  
+  <style>
+    body {
+        /* NBA用の画像を指定 */
+        background-image: url("/public/bg_nba.jpg");
+        
+        /* 画面いっぱいに広げる設定（WurtSと同じ） */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        
+        /* 文字色とフォント */
+        color: white; 
+        font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    /* 表のデザイン（WurtSと同じ黒透明） */
+    table {
+        background-color: rgba(0, 0, 0, 0.8); /* 80%透明の黒 */
+        color: white;
+        width: 80%; /* 幅も同じ */
+        margin: 20px auto; /* 真ん中寄せ */
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        padding: 10px;
+        border: 1px solid #555;
+        text-align: center;
+    }
+
+    /* リンクの色（NBAらしくゴールドにしました） */
+    a {
+        color: #ffd700; /* ゴールド */
+        text-decoration: none;
+    }
+    
+    /* マウスを乗せたときに光る */
+    a:hover {
+        text-shadow: 0 0 10px #ffd700;
+    }
+
+    h2 {
+        text-align: center;
+        text-shadow: 2px 2px 4px black;
+    }
+  </style>
+  </head>
+
+</head>
+<body>
+  <h2>🏀 NBAチーム一覧</h2>
+  <table border="1">
+    <tr><th>ID</th><th>チーム名</th><th>カンファレンス</th><th>詳細</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr>
+          <td><%= row.id %></td>
+          <td><%= row.name %></td>
+          <td><%= row.conf %></td>
+          <td><a href="/nba/<%= number %>">詳細を見る</a></td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <br>
+<a href="/public/nba_new.html">➕ 新しいチームを追加する</a>
+</body>
+</html>

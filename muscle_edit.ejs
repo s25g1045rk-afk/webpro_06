@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>編集: <%= data.menu %></title>
+</head>
+<body>
+  <h2><%= data.menu %> を編集</h2>
+  <form action="/muscle/update/<%= id %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr>
+          <td>種目</td>
+          <td><input type="text" name="menu" value="<%= data.menu %>"></td>
+      </tr>
+      <tr>
+          <td>重さ</td>
+          <td><input type="text" name="weight" value="<%= data.weight %>"></td>
+      </tr>
+      <tr>
+          <td>回数</td>
+          <td><input type="text" name="count" value="<%= data.count %>"></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="更新を保存">
+  </form>
+  <br>
+  <a href="/muscle/<%= id %>">キャンセル</a>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>筋トレ記録</title>
+  <head>
+  <meta charset="utf-8">
+  <title>筋トレ記録</title>
+  
+  <style>
+    body {
+        /* 筋トレ用の画像を指定 */
+        background-image: url("/public/bg_muscle.jpg");
+        
+        /* 画面いっぱいに広げる設定（WurtSと同じ） */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        
+        /* 文字色とフォント */
+        color: white; 
+        font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    /* 表のデザイン（WurtSと同じ黒透明） */
+    table {
+        background-color: rgba(0, 0, 0, 0.8); /* 80%透明の黒 */
+        color: white;
+        width: 80%; /* 幅も同じ */
+        margin: 20px auto; /* 真ん中寄せ */
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #555;
+        text-align: center;
+    }
+    
+    /* リンクの色（エネルギーを感じる赤オレンジ） */
+    a {
+        color: #ff4500; /* オレンジレッド */
+        text-decoration: none;
+    }
+    
+    /* マウスを乗せたときに光る */
+    a:hover {
+        text-shadow: 0 0 10px #ff4500;
+    }
+
+    h2 {
+        text-align: center;
+        text-shadow: 2px 2px 4px black;
+    }
+  </style>
+  </head>
+</head>
+<body>
+  <h2>💪 筋トレ記録一覧</h2>
+  <table border="1">
+    <tr><th>ID</th><th>種目</th><th>重さ</th><th>回数</th><th>詳細</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr>
+          <td><%= row.id %></td>
+          <td><%= row.menu %></td>
+          <td><%= row.weight %></td>
+          <td><%= row.count %></td>
+          <td><a href="/muscle/<%= number %>">詳細</a></td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <br>
+  <a href="/public/muscle_new.html">➕ 記録を追加する</a>
+</body>
+</html>
